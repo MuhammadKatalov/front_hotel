@@ -1,0 +1,130 @@
+.auth__form {
+  width: 560px;
+  margin: auto;
+  margin-top: 50px;
+  color: gray;
+  font-family: "Open Sans";
+}
+
+.personalInfo {
+  font-size: x-large;
+  border-bottom: 1px solid gray;
+  margin-bottom: 20px;
+  padding-bottom: 13px;
+}
+
+.signupError {
+  color: red;
+  margin-bottom: 5px;
+}
+
+.first__line__inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.input__type__wrapper {
+  text-align: center;
+}
+
+.email__input {
+  width: 260px;
+  height: 40px;
+  padding-left: 8px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.emailError {
+  font-size: 14px;
+  color: red;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+.password__inputWrapper {
+  position: relative;
+}
+
+.password__input {
+  width: 260px;
+  height: 40px;
+  padding-left: 8px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.eyeBtn {
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 35px;
+  top: 30%;
+}
+
+.passwordError {
+  font-size: 14px;
+  color: red;
+  margin-top: 3px;
+}
+
+.second__line__inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.firstName__input {
+  width: 260px;
+  height: 40px;
+  padding-left: 8px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.lastName__input {
+  width: 260px;
+  height: 40px;
+  padding-left: 8px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.third__line__inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.phoneNumber__input {
+  width: 260px;
+  height: 40px;
+  padding-left: 8px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.select {
+  width: 271px;
+  height: 43px;
+  padding-left: 8px;
+  padding-right: 5px;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.register__button {
+  width: 400px;
+  height: 50px;
+  margin-left: 85px;
+  background-color: #5b6460;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.register__button:disabled {
+  cursor: not-allowed;
+}

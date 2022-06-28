@@ -5,7 +5,7 @@ import AllNumbers from './pages/AllNumbers/AllNumbers';
 import NumbersByCategory from './pages/NumbersByCategory/NumbersByCategory';
 import Profile from './pages/Profile/Profile';
 import Rend from './pages/Rend/Rend';
-import SignIn from './pages/SignIn/Sign';
+import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 import Welcome from './pages/WelcomePage/Welcome';
 
