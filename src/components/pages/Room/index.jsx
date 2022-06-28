@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NumbersByCategory = () => {
+const Room = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const NumbersByCategory = () => {
     );
 };
 
-export default NumbersByCategory;
+export default Room;
