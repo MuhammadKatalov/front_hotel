@@ -8,11 +8,12 @@ import SignUp from './pages/SignUp/SignUp';
 import Welcome from './pages/WelcomePage/Welcome';
 import Header from '../components/Header/index';
 import Room from './pages/Room';
+import RendCalendar from './RendCalendar/RendCalendar';
 
 function App() {
   return (
     <div className='app'>
-      <Header />
+      <RendCalendar />
       <Routes>
         <Route path="aboutus" element={<AboutUs />} />
         <Route path='profile' element={<Profile />} />
