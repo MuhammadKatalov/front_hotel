@@ -7,12 +7,16 @@ import SignIn from './pages/SignIn/SignIn';
 import SignUp from './pages/SignUp/SignUp';
 import Welcome from './pages/WelcomePage/Welcome';
 import Header from '../components/Header/index';
+import Footer from '../components/Footer/index';
 import Room from './pages/Room';
+import RendCalendar from './RendCalendar/RendCalendar';
 
 function App() {
   return (
     <div className='app'>
+      {/* <RendCalendar /> */}
       <Header />
+      <Footer />
       <Routes>
         <Route path="aboutus" element={<AboutUs />} />
         <Route path='profile' element={<Profile />} />

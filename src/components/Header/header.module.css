@@ -1,0 +1,44 @@
+.head {
+  background-color: #FFFFFF;
+  width: 1400px;
+  height: 110px;
+  margin: auto;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 90px;
+  margin-top: 40px;
+  margin-left: 40px;
+  color: #000000;
+  font-family: 'Open sans';
+  font-size: 18px;
+}
+
+.icons1 {
+  margin-left: 136px;
+  margin-top: 18px;
+}
+
+.denmark {
+  width: 28px;
+  height: 28px;
+}
+
+.button__bron {
+  background-color: #5B6460;
+  color: #FFFFFF;
+  margin-right: 60px;
+  border: none;
+  width: 190px;
+  height: 55px;
+  margin-top: 20px;
+  font-family: 'Open sans';
+}
