@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  room: [],
+  room: {}
 };
 
-export const fetchRoom = createAsyncThunk("room/fetch", async (_, thunkAPI) => {
+export const fetchRoom = createAsyncThunk("room/fetch", async (id, thunkAPI) => {
   try {
-    const res = await fetch("http://localhost:3400/rooms");
+    const res = await fetch(`/rooms`);
     const data = await res.json();
     return data;
   } catch (e) {
