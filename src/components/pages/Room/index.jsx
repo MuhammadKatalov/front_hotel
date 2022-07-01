@@ -6,11 +6,10 @@ import { fetchRoom } from "../../../features/RoomSlice";
 const Room = () => {
   const room = useSelector((state) => state.room.room);
 
-  console.log(room);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchRoom());
+    dispatch(fetchRoom())
   }, [dispatch]);
 
   if (!room.length) {

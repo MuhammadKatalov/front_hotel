@@ -73,14 +73,14 @@ const SigninPage = () => {
         <div className={styles.auth__form__wrap}>
           <div className={styles.personalInfo}>Вход</div>
           <div className={styles.sign__in}>
+            {error ? (
+              <div className={styles.signinError}>
+                Неверный логин или пароль
+              </div>
+            ) : (
+              ""
+            )}
             <div className={styles.first__line__inputs}>
-              {error ? (
-                <div className={styles.signinError}>
-                  Неверный логин или пароль
-                </div>
-              ) : (
-                ""
-              )}
               <div>
                 <input
                   onBlur={(e) => blurHandle(e)}

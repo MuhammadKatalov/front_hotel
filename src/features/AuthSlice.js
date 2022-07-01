@@ -7,7 +7,11 @@ const initialState = {
   error: false,
   token: localStorage.getItem("token"),
   id: localStorage.getItem("id"),
+  login: localStorage.getItem("login")
 };
+
+console.log(initialState.token)
+
 
 export const createUser = createAsyncThunk(
   "user/register",
@@ -22,7 +26,6 @@ export const createUser = createAsyncThunk(
       });
 
       const data = await res.json();
-      console.log(data);
       if (!res.ok) {
         return thunkAPI.rejectWithValue({ error: data.error });
       } else {
@@ -53,6 +56,8 @@ export const doLogin = createAsyncThunk(
       } else {
         localStorage.setItem("token", data.token);
         localStorage.setItem("id", data.id);
+        localStorage.setItem("login", data.login)
+      
         return thunkAPI.fulfillWithValue(data);
       }
     } catch (error) {
@@ -87,7 +92,6 @@ export const authSlice = createSlice({
         state.error = null;
         state.token = action.payload.token;
         state.id = action.payload.id;
-        console.log(action.payload.token);
       })
       .addCase(doLogin.rejected, (state, action) => {
         state.signingIn = false;
