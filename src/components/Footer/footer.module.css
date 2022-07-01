@@ -1,0 +1,80 @@
+.foot {
+  background-color: #ffffff;
+  width: 1400px;
+  height: 470px;
+  margin: auto;
+  background-color: #5b6460;
+}
+
+.text {
+  margin-left: 100px;
+  margin-top: 70px;
+  font-size: 14px;
+  font-family: "Open Sans";
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.footbar {
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 90px;
+  margin-top: 70px;
+  color: #ffffff;
+  font-family: "Open sans";
+  font-size: 14px;
+}
+
+.footbar div {
+  width: 200px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.firstline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text2 {
+  width: 450px;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Open sans";
+  margin-top: 120px;
+  margin-left: 100px;
+  opacity: 0.7;
+}
+
+.text3 {
+  color: #efefef;
+  opacity: 0.7;
+  margin-left: 100px;
+  margin-top: 130px;
+  font-size: 15px;
+}
+
+.secondline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons__pay {
+  margin-top: 70px;
+  margin-right: 125px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.icons__pay div {
+  margin-right: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.icons__pay div img {
+  width: 100%;
+  object-fit: inherit;
+}
