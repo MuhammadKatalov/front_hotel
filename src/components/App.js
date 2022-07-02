@@ -15,8 +15,8 @@ function App() {
   return (
     <div className='app'>
       {/* <RendCalendar /> */}
-      <Header />
-      <Footer />
+      {/* <Header />
+      <Footer /> */}
       <Routes>
         <Route path="aboutus" element={<AboutUs />} />
         <Route path='profile' element={<Profile />} />

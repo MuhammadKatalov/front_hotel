@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  room: {}
+  room: null
 };
 
 export const fetchRoom = createAsyncThunk("room/fetch", async (id, thunkAPI) => {
