@@ -7,22 +7,28 @@ const initialState = {
   error: false,
   token: localStorage.getItem("token"),
   id: localStorage.getItem("id"),
-  login: localStorage.getItem("login")
 };
-
-console.log(initialState.token)
-
 
 export const createUser = createAsyncThunk(
   "user/register",
-  async ({ login, password, firstName, lastName, phoneNumber, country }, thunkAPI) => {
+  async (
+    { login, password, firstName, lastName, phoneNumber, country },
+    thunkAPI
+  ) => {
     try {
       const res = await fetch("http://localhost:3400/users/registration/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ login, password, firstName, lastName, phoneNumber, country }),
+        body: JSON.stringify({
+          login,
+          password,
+          firstName,
+          lastName,
+          phoneNumber,
+          country,
+        }),
       });
 
       const data = await res.json();
@@ -50,14 +56,14 @@ export const doLogin = createAsyncThunk(
       });
 
       const data = await res.json();
+      console.log(data)
 
       if (!res.ok) {
         return thunkAPI.rejectWithValue({ error: data.error });
       } else {
         localStorage.setItem("token", data.token);
         localStorage.setItem("id", data.id);
-        localStorage.setItem("login", data.login)
-      
+
         return thunkAPI.fulfillWithValue(data);
       }
     } catch (error) {
@@ -90,8 +96,8 @@ export const authSlice = createSlice({
       .addCase(doLogin.fulfilled, (state, action) => {
         state.signingIn = false;
         state.error = null;
-        state.token = action.payload.token;
         state.id = action.payload.id;
+        state.token = action.payload.token;
       })
       .addCase(doLogin.rejected, (state, action) => {
         state.signingIn = false;

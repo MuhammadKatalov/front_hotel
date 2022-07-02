@@ -126,8 +126,9 @@ const SigninPage = () => {
               onClick={handleSubmit}
               disabled={(emailError || passwordError) !== ""}
             >
-              <span>Подтвердить</span>
+              <span>Войти</span>
             </button>
+            <div className={styles.link__div}>Уже есть аккаунт? <Link className={styles.signup__link} to="/signup">Зарегистрироваться</Link></div>
           </div>
         </div>
       </div>
