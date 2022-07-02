@@ -1,0 +1,24 @@
+.App {
+  margin-top: 20px;
+  margin-left: 60px;
+  display: flex;
+}
+
+.map {
+  width: 700px;
+  height: 650px;
+}
+
+.forest__block {
+  width: 700px;
+  height: 650px;
+  background-color: #e9ece0;
+}
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+[class*="ground-pane"] {
+  filter: contrast(0.6);
+}

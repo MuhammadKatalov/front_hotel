@@ -128,3 +128,13 @@
 .register__button:disabled {
   cursor: not-allowed;
 }
+
+.link__div {
+  margin-top: 15px;
+  margin-left: 180px;
+}
+
+.signin__link {
+  text-decoration: none;
+  color: rgba(186, 18, 18, 0.696);
+}
