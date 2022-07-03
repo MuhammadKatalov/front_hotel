@@ -14,7 +14,7 @@ import RendCalendar from './RendCalendar/RendCalendar';
 function App() {
   return (
     <div className='app'>
-      {/* <RendCalendar /> */}
+      <RendCalendar />
       {/* <Header />
       <Footer /> */}
       <Routes>
