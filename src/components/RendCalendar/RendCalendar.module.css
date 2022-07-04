@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+
+.photo_text {
+  background-image: url("../../imagesIcon/Group67.png");
+  text-align: center;
+  height: 340px;
+}
+.booking {
+  font-size: 70px;
+  color: white;
+  font-weight: 300;
+  line-height: 200px;
+}
+.vests {
+  display: flex;
+}
+.vest {
+  margin-left: 600px;
+  margin-bottom: 40px;
+}
+.vest {
+  margin-top: 3px;
+}
+.vestborg {
+  font-size: 18px;
+  text-decoration-line: underline;
+  color: white;
+  margin-left: 7px;
+}
+
+.calendar {
+  width: 1400px;
+  margin: auto;
+}
+.container_check {
+  width: 432px;
+  border: 0.7px solid #5b6460;
+}
+.check_container {
+  width: 100%;
+  padding: 5%;
+}
+.datas {
+  margin-top: 25px;
+  height: 68px;
+}
+.registr_date {
+  width: 50%;
+  text-align: center;
+  line-height: 35px;
+  border-right: 0.7px solid #5b6460;
+}
+.rel_date {
+  font-weight: 600;
+}
+.releaseDate {
+  width: 50%;
+  text-align: center;
+  line-height: 35px;
+}
+.night_sum {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 142px;
+}
+
+.sum {
+  font-size: 24px;
+  color: #333333;
+  font-weight: 600;
+  width: 86px;
+}
+.nigth {
+  flex: 1;
+  font-size: 16px;
+  color: #333333;
+  width: 49px;
+  align-items: end;
+  margin-top: 7px;
+}
+.datas {
+  width: 384px;
+  border: 0.7px solid #5b6460;
+  display: flex;
+  justify-content: space-between;
+}
+.reg_date {
+  font-weight: 600;
+}
+.book {
+  width: 384px;
+  height: 60px;
+  background: #5b6460;
+  border: 1px solid #5b6460;
+  margin-top: 24px;
+  text-align: center;
+  line-height: 55px;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.nights {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.room_price {
+  font-weight: 550px;
+}
+.servicess {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.bord {
+  margin-top: 25px;
+  border-bottom: 0.7px solid #5b6460;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.book_green {
+  width: 384px;
+  height: 60px;
+  background: #21b874;
+  border: 1px solid #5b6460;
+  margin-top: 24px;
+  text-align: center;
+  line-height: 55px;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.circle {
+  width: 34px;
+  height: 34px;
+  background-color: white;
+  border-radius: 50%;
+  margin-top: 19px;
+}
+.service_all {
+  width: 100%;
+  height: 70px;
+  background-color: #e9ece0;
+  margin-bottom: 25px;
+}
+.serv_title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 20px;
+  line-height: 45px;
+}
+.corcle_item {
+  display: flex;
+  margin-left: 24px;
+  line-height: 18px;
+}
+.service_all_price {
+  margin-left: 77px;
+  line-height: 0px;
+}
+.circle span {
+  margin-left: 9px;
+  line-height: 37px;
+}

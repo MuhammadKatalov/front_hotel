@@ -7,3 +7,10 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+.react-datepicker__month-container {
+  width: 1400px;
+}
+.react-datepicker__day-names {
+  width:1400px;
+}

@@ -21,9 +21,9 @@ export const fetchRends = createAsyncThunk(
 
 export const postRends = createAsyncThunk(
     'rends/postRends',
-    async ({ registrationDate, releaseDate, services, room }, thunkAPI) => {
+    async ({ registrationDate, releaseDate, services, room, callback }, thunkAPI) => {
         try {
-            
+            console.log(services, 'dasdasdas');
             const state = thunkAPI.getState();
             const res = await fetch(`/rends/rend/${room}`, {
                 method: "POST",
@@ -52,7 +52,7 @@ export const rendsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(postRends.fulfilled, (state, action) => {
-                state.rends.push(action.payload)
+                state.rends = action.payload;
             })
             .addCase(fetchRends.fulfilled, (state, action) => {
                 state.rends = action.payload

@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import AboutUs from './pages/AboutUs/AboutUs';
+import TheArea from './pages/TheArea/TheArea';
 import Profile from './pages/Profile/Profile';
 import Rend from './pages/Rend/Rend';
 import SignIn from './pages/SignIn/SignIn';
@@ -20,10 +21,11 @@ function App() {
         <Route path="aboutus" element={<AboutUs />} />
         <Route path='profile' element={<Profile />} />
         <Route path='room' element={<Room />} />
-        <Route path="rend" element={<Rend />} />
+        <Route path="rend" element={<RendCalendar />} />
         <Route path='signIn' element={<SignIn />} />
         <Route path='signUp' element={<SignUp />} />
         <Route path='welcome' element={<Welcome />} />
+        <Route path='thearea' element={<TheArea />} />
       </Routes>
       <Footer />
     </div>

@@ -1,0 +1,113 @@
+.about__page {
+  background-color: #ffffff;
+  width: 1400px;
+  height: 110px;
+  margin: auto;
+}
+
+.main__content {
+  width: 1100px;
+  height: 478px;
+  margin: auto;
+  display: flex;
+  margin-top: 150px;
+}
+
+.about_us {
+  background-image: url("../../../imagesIcon/about.jpg");
+  text-align: center;
+  height: 340px;
+}
+
+.title_about {
+  color: white;
+  font-family: "Open sans";
+  padding-top: 100px;
+  font-size: 70px;
+  font-weight: 300;
+}
+
+.nate {
+  width: 547px;
+  height: 478px;
+}
+
+.text__content {
+  margin: auto;
+  width: 500px;
+  margin-left: 137px;
+  color: #5b6460;
+}
+
+.text__1 {
+  font-size: 25px;
+  font-family: "Open sans";
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.text__2 {
+  font-size: 16px;
+  font-family: "Open sans";
+}
+
+.line {
+  margin-top: 70px;
+}
+
+.text__3 {
+  width: 600px;
+  font-size: 40px;
+  margin: auto;
+  color: #5b6460;
+  text-align: center;
+  margin-top: 70px;
+  font-family: "Open sans";
+  margin-bottom: 100px;
+}
+
+.images__1 {
+  width: 1395px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartinka {
+  border: 1px solid #5b6460;
+}
+
+.gora {
+  width: 910px;
+}
+
+.images__2 {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back__text {
+  background-color: #e9ece0;
+  width: 432px;
+  height: 387px;
+  padding: 121px 66px;
+  font-size: 20px;
+  font-family: "Open sans";
+  font-style: italic;
+}
+
+.foot__block {
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+  font-family: "Open sans";
+}
+
+.iconlove {
+  width: 60px;
+  height: 60px;
+}

@@ -1,0 +1,153 @@
+.area__page {
+  background-color: #ffffff;
+  width: 1400px;
+  height: 110px;
+  margin: auto;
+}
+
+.area__wrapper {
+  background-image: url("../../../imagesIcon/area.png");
+  text-align: center;
+  height: 340px;
+}
+
+.title__area {
+  color: white;
+  font-family: "Open sans";
+  padding-top: 100px;
+  font-size: 70px;
+  font-weight: 300;
+}
+
+.main__content {
+  width: 1100px;
+  height: 478px;
+  margin: auto;
+  display: flex;
+  margin-top: 150px;
+}
+
+.text__content {
+  margin: auto;
+  width: 500px;
+  margin-left: 137px;
+  color: #5b6460;
+}
+
+.text__1 {
+  font-size: 40px;
+  font-family: "Open sans";
+  margin-bottom: 30px;
+  color: #5b6460;
+}
+
+.text__2 {
+  font-size: 25px;
+  font-family: "Open sans";
+  font-style: italic;
+  color: #5b6460;
+}
+
+.text__3 {
+  margin-top: 30px;
+  font-size: 16px;
+  font-family: "Open sans";
+  color: #333333;
+}
+
+.info__cart {
+  display: flex;
+  margin-top: 100px;
+}
+
+.text__info {
+  width: 420px;
+  font-size: 30px;
+  margin-left: 260px;
+  margin-right: 95px;
+  margin-top: 200px;
+  font-family: "Open sans";
+  color: #333333;
+}
+
+.line {
+  margin-top: 100px;
+}
+
+.info__block {
+  margin-top: 100px;
+  font-family: "Open sans";
+  color: #333333;
+  font-size: 30px;
+  margin-left: 260px;
+}
+
+.rest__shop {
+  display: flex;
+  margin-top: 100px;
+}
+.restoran {
+  margin-left: 150px;
+}
+.rest__text {
+  margin: auto;
+  width: 500px;
+  color: #5b6460;
+  font-family: "Open Sans";
+}
+
+.rest__text1 {
+  font-size: 40px;
+  color: #5b6460;
+  font-family: "Open Sans";
+  margin-left: 40px;
+  font-style: italic;
+}
+.rest__text2 {
+  font-size: 30px;
+  font-family: "Open Sans";
+  margin-top: 120px;
+  margin-left: 40px;
+}
+
+.vodopad__info {
+  display: flex;
+  margin-top: 100px;
+}
+
+.vodopad__text {
+  margin-left: 150px;
+  font-size: 30px;
+  font-family: "Open Sans";
+  margin-right: 170px;
+  margin-top: 50px;
+}
+
+.doroga__info {
+  display: flex;
+  margin-top: 100px;
+}
+
+.doroga__text {
+  font-size: 30px;
+  font-family: "Open Sans";
+  margin-left: 150px;
+  margin-top: 50px;
+}
+
+.doroga {
+  margin-left: 150px;
+}
+
+.domiki__info {
+  display: flex;
+  margin-top: 100px;
+}
+
+.domiki__text {
+  margin-left: 150px;
+  font-size: 30px;
+  font-family: "Open Sans";
+  margin-right: 170px;
+  margin-top: 50px;
+}
