@@ -8,9 +8,13 @@ import { useSelector, useDispatch } from "react-redux/es/exports";
 import { fetchServices } from "../../features/ServicesSlice";
 import ResultCheck from "./ResultCheck";
 import styles from "./RendCalendar.module.css";
+import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlineCheck } from "react-icons/ai";
+import photo from "../../imagesIcon/Vector.png";
 
 const RendCalendar = () => {
   const dispatch = useDispatch();
+
   const rends = useSelector((state) => state.rends.rends);
   const room = useSelector((state) => state.room.room);
   const services = useSelector((state) => state.services.services);
@@ -21,10 +25,9 @@ const RendCalendar = () => {
     dispatch(fetchRends());
   }, [dispatch]);
 
-  console.log(rends);
-
   const [dateRange, setDateRange] = useState([0, 0]);
   const [checkIn, checkOut] = dateRange;
+  const [add, setAdd] = useState(false);
 
   const checkInDate = new Date(checkIn);
 
@@ -42,11 +45,11 @@ const RendCalendar = () => {
   const checkOutValue = checkOutYear + "-" + checkOutMonth + "-" + checkOutDay;
 
   const [selectedServicess, setSelectedServicess] = useState([]);
-  console.log(rends);
+  console.log(selectedServicess);
   const getRends = () => {
     dispatch(fetchRends());
   };
-  console.log(checkInValue);
+
   const handleRend = () => {
     dispatch(
       postRends({
@@ -59,30 +62,60 @@ const RendCalendar = () => {
     );
   };
 
+  // const checked = selectedServicess.includes(id);
+
   const handleAddService = (id) => {
     setSelectedServicess([...selectedServicess, id]);
   };
 
   return (
     <div className={styles.calendar}>
-      <DatePicker
-        selectsRange={true}
-        startDate={checkIn}
-        endDate={checkOut}
-        minDate={new Date()}
-        onChange={(update) => {
-          setDateRange(update);
-        }}
-        isClearable={false}
-      />
+      <div className={styles.photo_text}>
+        <h1 className={styles.booking}>Аренда</h1>
+        <div className={styles.vests}>
+          <div className={styles.vest}>
+            <img src={photo} alt="" />
+          </div>
+          <div className={styles.vestborg}>Вестерборг, Дания</div>
+        </div>
+      </div>
+      <div className={styles.datePicker}>
+        <DatePicker
+          selectsRange={true}
+          startDate={checkIn}
+          endDate={checkOut}
+          minDate={new Date()}
+          inline
+          onChange={(update) => {
+            setDateRange(update);
+          }}
+          isClearable={false}
+        />
+      </div>
       {services.map((item) => {
         return (
           <div key={item._id} className={styles.services}>
             <div
               onClick={() => handleAddService(item._id)}
-              className="certain_service"
+              className={styles.certain_service}
             >
-              {item.title} {item.price}
+              <div className={styles.service_all}>
+                <div className={styles.service_all_title}>
+                  <div className={styles.corcle_item}>
+                    <div className={styles.circle}>
+                      <span>
+                        {!selectedServicess.includes(item._id) ? (
+                          <AiOutlinePlus />
+                        ) : (
+                          <AiOutlineCheck />
+                        )}
+                      </span>
+                    </div>
+                    <div className={styles.serv_title}>{item.title}</div>
+                  </div>
+                  <div className={styles.service_all_price}>{item.price}</div>
+                </div>
+              </div>
             </div>
           </div>
         );
