@@ -24,10 +24,6 @@
   margin-bottom: 20px;
 }
 
-.input__type__wrapper {
-  text-align: center;
-}
-
 .email__input {
   width: 260px;
   height: 40px;
@@ -96,6 +92,7 @@
 .link__div {
   margin-top: 15px;
   margin-left: 130px;
+  margin-bottom: 50px;
 }
 
 .signup__link {
