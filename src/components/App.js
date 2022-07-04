@@ -1,6 +1,7 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
 import AboutUs from './pages/AboutUs/AboutUs';
+import TheArea from './pages/TheArea/TheArea';
 import Profile from './pages/Profile/Profile';
 import Rend from './pages/Rend/Rend';
 import SignIn from './pages/SignIn/SignIn';
@@ -14,7 +15,7 @@ import RendCalendar from './RendCalendar/RendCalendar';
 function App() {
   return (
     <div className='app'>
-      <RendCalendar />
+      {/* <RendCalendar /> */}
       {/* <Header />
       <Footer /> */}
       <Routes>
@@ -25,6 +26,7 @@ function App() {
         <Route path='signIn' element={<SignIn />} />
         <Route path='signUp' element={<SignUp />} />
         <Route path='welcome' element={<Welcome />} />
+        <Route path='thearea' element={<TheArea />} />
       </Routes>
     </div>
   );
