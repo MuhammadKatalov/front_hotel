@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ServicesPrice from "./ServicesPrice";
 import styles from "./RendCalendar.module.css";
+import { Link } from "react-router-dom";
 
 const ResultCheck = ({ rends, onCheck }) => {
   const sum = 74000;
@@ -11,12 +12,12 @@ const ResultCheck = ({ rends, onCheck }) => {
     return money;
   };
 
-  const [book, setBook] = useState(false)
+  const [book, setBook] = useState(false);
 
   const handleBook = () => {
-    setBook(!book)
-    onCheck()
-  }
+    setBook(!book);
+    onCheck();
+  };
 
   console.log(rends);
   return (
@@ -40,10 +41,17 @@ const ResultCheck = ({ rends, onCheck }) => {
                     <div className={styles.date_rel}>{rend.releaseDate}</div>
                   </div>
                 </div>
-                <div className={book ? styles.book_green : styles.book} onClick={handleBook}>К ОПЛАТЕ</div>
+                <Link to={"/payment"}>
+                  <div
+                    className={book ? styles.book_green : styles.book}
+                    onClick={handleBook}
+                  >
+                    К ОПЛАТЕ
+                  </div>
+                </Link>
                 <div className={styles.nights}>
-                <div className={styles.room_price}>18500 * 6 nigths</div>
-                <div className={styles.price_room}>{sum}₽</div>
+                  <div className={styles.room_price}>18500 * 6 ночей</div>
+                  <div className={styles.price_room}>{sum}₽</div>
                 </div>
                 <ServicesPrice rend={rend} />
                 <div className={styles.bord}></div>

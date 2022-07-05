@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Payment.module.css";
 
 const PaymentPage = () => {
@@ -40,7 +41,9 @@ const PaymentPage = () => {
             type="text"
           />
         </div>
-        <button className={styles.button__confirm}>Принять и оплатить</button>
+        <Link to={"/profile"}>
+          <button className={styles.button__confirm}>Принять и оплатить</button>
+        </Link>
       </div>
     </div>
   );

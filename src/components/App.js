@@ -23,7 +23,6 @@ function App() {
           <Route path="rend" element={<RendCalendar />} />
           <Route path="signIn" element={<SignIn />} />
           <Route path="signUp" element={<SignUp />} />
-          <Route  path={'payment'} element={<PaymentPage />} />
           <Route index  element={<Welcome />} />
           <Route path="thearea" element={<TheArea />} />
           <Route path="dialog" element={<Chat />} />

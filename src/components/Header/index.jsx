@@ -12,15 +12,36 @@ const Header = () => {
           <img className={styles.icons1} src={icons1} alt=""></img>
         </div>
         <div className={styles.navbar}>
-          <Link to={'welcome'}><div className={styles.home}>Главная</div></Link>
-          <Link to={'/room'}><div>Хижина</div></Link>
-          <Link to={'/thearea'}><div>Местоположение</div></Link>
-          <Link to={'/rend'}><div>Бронирование</div></Link>
-          
-          <Link to={'aboutus'}><a href="tel:+79889075674"><div>О нас</div></a></Link>
+          <Link to={"/"}>
+            <div className={styles.home}>Главная</div>
+          </Link>
+          <Link to={"/room"}>
+            <div>Хижина</div>
+          </Link>
+          <Link to={"/thearea"}>
+            <div>Местоположение</div>
+          </Link>
+          <Link to={"/rend"}>
+            <div>Бронирование</div>
+          </Link>
+          <Link to={"/signup"}>
+            <div>Зарегистрироваться</div>
+          </Link>
+          <Link to={"/signin"}>
+            <div>Войти</div>
+          </Link>
+
+          <Link to={"aboutus"}>
+            <div>
+              {" "}
+              <a href="tel:89380150313">О нас</a> О нас
+            </div>
+          </Link>
           <img className={styles.denmark} src={denmark} alt=""></img>
         </div>
-        <Link to={'/rend'}><button className={styles.button__bron}>ЗАБРОНИРОВАТЬ</button></Link>
+        <Link to={"/rend"}>
+          <button className={styles.button__bron}>ЗАБРОНИРОВАТЬ</button>
+        </Link>
       </div>
     </header>
   );
