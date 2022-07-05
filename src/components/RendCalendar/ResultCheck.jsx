@@ -20,7 +20,7 @@ const ResultCheck = ({ rends, onCheck }) => {
 
   console.log(rends);
   return (
-    <div>
+    <div className={styles.for_disp}>
       {rends.map((rend) => {
         return (
           <div className={styles.container_check} key={rend._id}>

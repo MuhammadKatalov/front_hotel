@@ -15,7 +15,8 @@ const Header = () => {
           <div>Хижина</div>
           <div>Местоположение</div>
           <div>Бронирование</div>
-          <div>О нас</div>
+          
+          <a href="tel:+79889075674"><div>О нас</div></a>
           <img className={styles.denmark} src={denmark} alt=""></img>
         </div>
         <button className={styles.button__bron}>ЗАБРОНИРОВАТЬ</button>

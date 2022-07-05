@@ -32,6 +32,7 @@ const RendCalendar = () => {
 
   const [dateRange, setDateRange] = useState([0, 0]);
   const [checkIn, checkOut] = dateRange;
+  const [otpr, setOtpr] = useState(false);
 
   const checkInDate = new Date(checkIn);
 
@@ -49,7 +50,7 @@ const RendCalendar = () => {
   const checkOutValue = checkOutYear + "-" + checkOutMonth + "-" + checkOutDay;
 
   const [selectedServicess, setSelectedServicess] = useState([]);
-  console.log(selectedServicess);
+
   const getRends = () => {
     dispatch(fetchRends());
   };
@@ -64,6 +65,7 @@ const RendCalendar = () => {
         callback: getRends,
       })
     );
+    setOtpr(true);
   };
 
   const handleAddService = (id) => {
@@ -73,7 +75,7 @@ const RendCalendar = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const nextStep = () => {
-    if (activeStep < 2) {
+    if (activeStep < 3) {
       setActiveStep((currentStep) => currentStep + 1);
     }
   };
@@ -103,7 +105,10 @@ const RendCalendar = () => {
           <StepLabel>Шаг второй</StepLabel>
         </Step>
         <Step>
-          <StepLabel>Шаг третий</StepLabel>
+          <StepLabel>Почти закончили</StepLabel>
+        </Step>
+        <Step>
+          <StepLabel>Конечная станция</StepLabel>
         </Step>
       </Stepper>
       <div className={styles.go_back}>
@@ -160,9 +165,50 @@ const RendCalendar = () => {
               </div>
             </div>
           );
-        }) 
+        })
+      ) : activeStep === 2 ? (
+        <div className={styles.text}>
+          <div className={styles.please}>
+            Если у вас есть дополнительные пожелания, заполните поле снизу. Мы
+            все их учтем
+          </div>
+          <hr />
+          <div className={styles.input}>
+            <textarea type="text" />
+          </div>
+          <button
+            className={!otpr ? styles.otpr : styles.otpr_green}
+            onClick={handleRend}
+          >
+            Отправить данные
+          </button>
+        </div>
       ) : (
-        rends && <ResultCheck onCheck={handleRend} rends={rends} />
+        <div className={styles.ooo}>
+          <div className={styles.all_rooles}>
+            <div className={styles.hot_rool}>Правила поведения в хижине</div>
+            <div className={styles.rooles}>
+              <div className={styles.reg_rool}>
+                Регистрация заезда: с 14:00 до 23:00
+              </div>
+              <div className={styles.reg_rool}>Выезд: 11:00</div>
+              <div className={styles.reg_rool}>
+                Не подходит для детей и младенцев
+              </div>
+              <div className={styles.reg_rool}>Не курить</div>
+              <div className={styles.reg_rool}>Никаких домашних животных</div>
+            </div>
+          </div>
+          {rends && <ResultCheck onCheck={handleRend} rends={rends} />}
+          <div className={styles.import}>
+            <div className={styles.imp_info}>Важная информация</div>
+            <div className={styles.info_imp}>
+              Вам нужно подняться по крутому холму, чтобы добраться до домиков
+              на деревьях, это займет около 20-30 минут по тропе с лестницей и
+              неровной поверхностью.
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
