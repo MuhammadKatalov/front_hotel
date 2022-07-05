@@ -21,7 +21,10 @@
   font-family: 'Open sans';
   font-size: 18px;
 }
-
+a {
+  text-decoration: none;
+  color: #333;
+}
 .icons1 {
   margin-left: 136px;
   margin-top: 18px;

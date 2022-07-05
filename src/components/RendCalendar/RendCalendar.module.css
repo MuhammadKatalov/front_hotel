@@ -166,6 +166,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+  margin-bottom: 7px;
 }
 .please {
   font-size: 24px;
@@ -183,6 +184,7 @@ hr {
   margin-top: 7px;
 }
 .otpr {
+  margin-bottom: 5px;
   width: 384px;
   height: 60px;
   background: #5b6460;
@@ -197,6 +199,7 @@ hr {
   text-transform: uppercase;
 }
 .otpr_green {
+  margin-bottom: 5px;
   width: 384px;
   height: 60px;
   background: #0d9558;
@@ -236,4 +239,7 @@ hr {
 }
 .all_rooles {
   width: 300px;
+}
+.stepper {
+  margin-top: 10px;
 }

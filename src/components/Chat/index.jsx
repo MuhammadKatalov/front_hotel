@@ -21,6 +21,8 @@ const Chat = () => {
     const dispatch = useDispatch();
     const scrollRef = useRef();
     const [emoji, setEmoji] = useState(false);
+    
+    console.log(messages);
 
     useEffect(() => {
         if(openChat) {
