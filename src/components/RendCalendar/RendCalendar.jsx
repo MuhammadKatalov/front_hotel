@@ -16,6 +16,7 @@ import { Step } from "@mui/material";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 const RendCalendar = () => {
   const dispatch = useDispatch();
@@ -179,12 +180,14 @@ const RendCalendar = () => {
           <div className={styles.input}>
             <textarea type="text" />
           </div>
-          <button
-            className={!otpr ? styles.otpr : styles.otpr_green}
-            onClick={handleRend}
-          >
-            Отправить данные
-          </button>
+          <Link to={'/payment'}>
+            <button
+              className={!otpr ? styles.otpr : styles.otpr_green}
+              onClick={handleRend}
+            >
+              Составить чек
+            </button>
+          </Link>
         </div>
       ) : (
         <div className={styles.ooo}>

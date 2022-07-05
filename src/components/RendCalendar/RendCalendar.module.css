@@ -184,6 +184,7 @@ hr {
   margin-top: 7px;
 }
 .otpr {
+  margin-bottom: 5px;
   width: 384px;
   height: 60px;
   background: #5b6460;
@@ -198,6 +199,7 @@ hr {
   text-transform: uppercase;
 }
 .otpr_green {
+  margin-bottom: 5px;
   width: 384px;
   height: 60px;
   background: #0d9558;
