@@ -11,6 +11,11 @@ import styles from "./RendCalendar.module.css";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineCheck } from "react-icons/ai";
 import photo from "../../imagesIcon/Vector.png";
+import Stepper from "@mui/material/Stepper";
+import { Step } from "@mui/material";
+import StepLabel from "@mui/material/StepLabel";
+import Button from "@mui/material/Button";
+import "../App.css";
 
 const RendCalendar = () => {
   const dispatch = useDispatch();
@@ -27,7 +32,6 @@ const RendCalendar = () => {
 
   const [dateRange, setDateRange] = useState([0, 0]);
   const [checkIn, checkOut] = dateRange;
-  const [add, setAdd] = useState(false);
 
   const checkInDate = new Date(checkIn);
 
@@ -66,6 +70,20 @@ const RendCalendar = () => {
     setSelectedServicess([...selectedServicess, id]);
   };
 
+  const [activeStep, setActiveStep] = useState(0);
+
+  const nextStep = () => {
+    if (activeStep < 2) {
+      setActiveStep((currentStep) => currentStep + 1);
+    }
+  };
+
+  const previosStep = () => {
+    if (activeStep !== 0) {
+      setActiveStep((currentStep) => currentStep - 1);
+    }
+  };
+
   return (
     <div className={styles.calendar}>
       <div className={styles.photo_text}>
@@ -77,51 +95,75 @@ const RendCalendar = () => {
           <div className={styles.vestborg}>Вестерборг, Дания</div>
         </div>
       </div>
-      <div className={styles.datePicker}>
-        <DatePicker
-          selectsRange={true}
-          startDate={checkIn}
-          endDate={checkOut}
-          minDate={new Date()}
-          inline
-          onChange={(update) => {
-            setDateRange(update);
-          }}
-          isClearable={false}
-        />
+      <Stepper activeStep={activeStep}>
+        <Step>
+          <StepLabel>Шаг первый</StepLabel>
+        </Step>
+        <Step>
+          <StepLabel>Шаг второй</StepLabel>
+        </Step>
+        <Step>
+          <StepLabel>Шаг третий</StepLabel>
+        </Step>
+      </Stepper>
+      <div className={styles.go_back}>
+        <Button onClick={() => nextStep()} variant="outlined" color="primary">
+          Вперед
+        </Button>
+        <Button
+          onClick={() => previosStep()}
+          variant="outlined"
+          color="primary"
+        >
+          Назад
+        </Button>
       </div>
-      {services.map((item) => {
-        return (
-          <div key={item._id} className={styles.services}>
-            <div
-              onClick={() => handleAddService(item._id)}
-              className={styles.certain_service}
-            >
-              <div className={styles.service_all}>
-                <div className={styles.service_all_title}>
-                  <div className={styles.corcle_item}>
-                    <div className={styles.circle}>
-                      <span>
-                        {!selectedServicess.includes(item._id) ? (
-                          <AiOutlinePlus />
-                        ) : (
-                          <AiOutlineCheck />
-                        )}
-                      </span>
+      {!activeStep ? (
+        <div className={styles.datePicker}>
+          <DatePicker
+            selectsRange={true}
+            startDate={checkIn}
+            endDate={checkOut}
+            minDate={new Date()}
+            inline
+            onChange={(update) => {
+              setDateRange(update);
+            }}
+            isClearable={false}
+          />
+        </div>
+      ) : activeStep === 1 ? (
+        services.map((item) => {
+          return (
+            <div key={item._id} className={styles.services}>
+              <div
+                onClick={() => handleAddService(item._id)}
+                className={styles.certain_service}
+              >
+                <div className={styles.service_all}>
+                  <div className={styles.service_all_title}>
+                    <div className={styles.corcle_item}>
+                      <div className={styles.circle}>
+                        <span>
+                          {!selectedServicess.includes(item._id) ? (
+                            <AiOutlinePlus />
+                          ) : (
+                            <AiOutlineCheck />
+                          )}
+                        </span>
+                      </div>
+                      <div className={styles.serv_title}>{item.title}</div>
                     </div>
-                    <div className={styles.serv_title}>{item.title}</div>
+                    <div className={styles.service_all_price}>{item.price}</div>
                   </div>
-                  <div className={styles.service_all_price}>{item.price}</div>
                 </div>
               </div>
             </div>
-          </div>
-        );
-      })}
-      <button onClick={handleRend}>
-        арендовать
-      </button>
-      {rends && <ResultCheck onCheck={handleRend} rends={rends} />}
+          );
+        }) 
+      ) : (
+        rends && <ResultCheck onCheck={handleRend} rends={rends} />
+      )}
     </div>
   );
 };

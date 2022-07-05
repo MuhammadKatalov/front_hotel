@@ -40,7 +40,7 @@ const ResultCheck = ({ rends, onCheck }) => {
                     <div className={styles.date_rel}>{rend.releaseDate}</div>
                   </div>
                 </div>
-                <div className={book ? styles.book_green : styles.book} onClick={handleBook}>Арендовать</div>
+                <div className={book ? styles.book_green : styles.book} onClick={handleBook}>К ОПЛАТЕ</div>
                 <div className={styles.nights}>
                 <div className={styles.room_price}>18500 * 6 nigths</div>
                 <div className={styles.price_room}>{sum}₽</div>

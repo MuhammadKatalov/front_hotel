@@ -187,6 +187,7 @@ const SignupPage = () => {
                 <option value="Украина">Украина</option>
                 <option value="США">США</option>
                 <option value="Китай">Китай</option>
+                <option value="Дания">Дания</option>
               </select>
             </div>
             <button
@@ -196,7 +197,12 @@ const SignupPage = () => {
             >
               <span>Регистрация</span>
             </button>
-            <div className={styles.link__div}>Уже есть аккаунт? <Link className={styles.signin__link} to="/signin">Войти</Link></div>
+            <div className={styles.link__div}>
+              Уже есть аккаунт?{" "}
+              <Link className={styles.signin__link} to="/signin">
+                Войти
+              </Link>
+            </div>
           </div>
         </div>
       </div>

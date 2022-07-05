@@ -15,9 +15,11 @@ import RendCalendar from './RendCalendar/RendCalendar';
 function App() {
   return (
     <div className='app'>
+
       <RendCalendar />
       {/* <Header />
       <Footer /> */}
+
       <Routes>
         <Route path="aboutus" element={<AboutUs />} />
         <Route path='profile' element={<Profile />} />
@@ -28,6 +30,7 @@ function App() {
         <Route path='welcome' element={<Welcome />} />
         <Route path='thearea' element={<TheArea />} />
       </Routes>
+
     </div>
   );
 }

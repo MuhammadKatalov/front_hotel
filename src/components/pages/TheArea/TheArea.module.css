@@ -1,8 +1,11 @@
 .area__page {
   background-color: #ffffff;
   width: 1400px;
-  height: 110px;
   margin: auto;
+}
+
+.main__content__wrapper {
+  width: 1400px;
 }
 
 .area__wrapper {
@@ -15,7 +18,7 @@
   color: white;
   font-family: "Open sans";
   padding-top: 100px;
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 300;
 }
 
@@ -142,6 +145,7 @@
 .domiki__info {
   display: flex;
   margin-top: 100px;
+  margin-bottom: 150px;
 }
 
 .domiki__text {
@@ -150,4 +154,31 @@
   font-family: "Open Sans";
   margin-right: 170px;
   margin-top: 50px;
+}
+
+/* Map styles */
+
+.map__wrapper {
+  margin-top: 20px;
+  margin-left: 60px;
+  display: flex;
+}
+
+.map {
+  width: 1400px;
+  height: 500px;
+}
+
+.forest__block {
+  width: 700px;
+  height: 650px;
+  background-color: #e9ece0;
+}
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+[class*="ground-pane"] {
+  filter: contrast(0.6);
 }
