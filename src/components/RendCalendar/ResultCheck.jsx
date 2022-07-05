@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ServicesPrice from "./ServicesPrice";
 import styles from "./RendCalendar.module.css";
 
-const ResultCheck = ({ rends }) => {
+const ResultCheck = ({ rends, onCheck }) => {
   const sum = 74000;
 
   const sumPrice = (rend) => {
@@ -15,6 +15,7 @@ const ResultCheck = ({ rends }) => {
 
   const handleBook = () => {
     setBook(!book)
+    onCheck()
   }
 
   console.log(rends);

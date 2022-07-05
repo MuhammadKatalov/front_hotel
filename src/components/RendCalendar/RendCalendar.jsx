@@ -62,8 +62,6 @@ const RendCalendar = () => {
     );
   };
 
-  // const checked = selectedServicess.includes(id);
-
   const handleAddService = (id) => {
     setSelectedServicess([...selectedServicess, id]);
   };
@@ -120,10 +118,10 @@ const RendCalendar = () => {
           </div>
         );
       })}
-      <button onClick={() => handleRend(checkInDate, checkOutDate)}>
+      <button onClick={handleRend}>
         арендовать
       </button>
-      {rends && <ResultCheck rends={rends} />}
+      {rends && <ResultCheck onCheck={handleRend} rends={rends} />}
     </div>
   );
 };
