@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ServicesPrice from "./ServicesPrice";
 import styles from "./RendCalendar.module.css";
 
-const ResultCheck = ({ rends }) => {
+const ResultCheck = ({ rends, onCheck }) => {
   const sum = 74000;
 
   const sumPrice = (rend) => {
@@ -15,11 +15,12 @@ const ResultCheck = ({ rends }) => {
 
   const handleBook = () => {
     setBook(!book)
+    onCheck()
   }
 
   console.log(rends);
   return (
-    <div>
+    <div className={styles.for_disp}>
       {rends.map((rend) => {
         return (
           <div className={styles.container_check} key={rend._id}>
@@ -39,7 +40,7 @@ const ResultCheck = ({ rends }) => {
                     <div className={styles.date_rel}>{rend.releaseDate}</div>
                   </div>
                 </div>
-                <div className={book ? styles.book_green : styles.book} onClick={handleBook}>Арендовать</div>
+                <div className={book ? styles.book_green : styles.book} onClick={handleBook}>К ОПЛАТЕ</div>
                 <div className={styles.nights}>
                 <div className={styles.room_price}>18500 * 6 nigths</div>
                 <div className={styles.price_room}>{sum}₽</div>

@@ -11,6 +11,11 @@ import styles from "./RendCalendar.module.css";
 import { AiOutlinePlus } from "react-icons/ai";
 import { AiOutlineCheck } from "react-icons/ai";
 import photo from "../../imagesIcon/Vector.png";
+import Stepper from "@mui/material/Stepper";
+import { Step } from "@mui/material";
+import StepLabel from "@mui/material/StepLabel";
+import Button from "@mui/material/Button";
+import "../App.css";
 
 const RendCalendar = () => {
   const dispatch = useDispatch();
@@ -27,7 +32,7 @@ const RendCalendar = () => {
 
   const [dateRange, setDateRange] = useState([0, 0]);
   const [checkIn, checkOut] = dateRange;
-  const [add, setAdd] = useState(false);
+  const [otpr, setOtpr] = useState(false);
 
   const checkInDate = new Date(checkIn);
 
@@ -45,7 +50,7 @@ const RendCalendar = () => {
   const checkOutValue = checkOutYear + "-" + checkOutMonth + "-" + checkOutDay;
 
   const [selectedServicess, setSelectedServicess] = useState([]);
-  console.log(selectedServicess);
+
   const getRends = () => {
     dispatch(fetchRends());
   };
@@ -60,12 +65,25 @@ const RendCalendar = () => {
         callback: getRends,
       })
     );
+    setOtpr(true);
   };
-
-  // const checked = selectedServicess.includes(id);
 
   const handleAddService = (id) => {
     setSelectedServicess([...selectedServicess, id]);
+  };
+
+  const [activeStep, setActiveStep] = useState(0);
+
+  const nextStep = () => {
+    if (activeStep < 3) {
+      setActiveStep((currentStep) => currentStep + 1);
+    }
+  };
+
+  const previosStep = () => {
+    if (activeStep !== 0) {
+      setActiveStep((currentStep) => currentStep - 1);
+    }
   };
 
   return (
@@ -79,51 +97,119 @@ const RendCalendar = () => {
           <div className={styles.vestborg}>Вестерборг, Дания</div>
         </div>
       </div>
-      <div className={styles.datePicker}>
-        <DatePicker
-          selectsRange={true}
-          startDate={checkIn}
-          endDate={checkOut}
-          minDate={new Date()}
-          inline
-          onChange={(update) => {
-            setDateRange(update);
-          }}
-          isClearable={false}
-        />
+      <Stepper activeStep={activeStep}>
+        <Step>
+          <StepLabel>Шаг первый</StepLabel>
+        </Step>
+        <Step>
+          <StepLabel>Шаг второй</StepLabel>
+        </Step>
+        <Step>
+          <StepLabel>Почти закончили</StepLabel>
+        </Step>
+        <Step>
+          <StepLabel>Конечная станция</StepLabel>
+        </Step>
+      </Stepper>
+      <div className={styles.go_back}>
+        <Button onClick={() => nextStep()} variant="outlined" color="primary">
+          Вперед
+        </Button>
+        <Button
+          onClick={() => previosStep()}
+          variant="outlined"
+          color="primary"
+        >
+          Назад
+        </Button>
       </div>
-      {services.map((item) => {
-        return (
-          <div key={item._id} className={styles.services}>
-            <div
-              onClick={() => handleAddService(item._id)}
-              className={styles.certain_service}
-            >
-              <div className={styles.service_all}>
-                <div className={styles.service_all_title}>
-                  <div className={styles.corcle_item}>
-                    <div className={styles.circle}>
-                      <span>
-                        {!selectedServicess.includes(item._id) ? (
-                          <AiOutlinePlus />
-                        ) : (
-                          <AiOutlineCheck />
-                        )}
-                      </span>
+      {!activeStep ? (
+        <div className={styles.datePicker}>
+          <DatePicker
+            selectsRange={true}
+            startDate={checkIn}
+            endDate={checkOut}
+            minDate={new Date()}
+            inline
+            onChange={(update) => {
+              setDateRange(update);
+            }}
+            isClearable={false}
+          />
+        </div>
+      ) : activeStep === 1 ? (
+        services.map((item) => {
+          return (
+            <div key={item._id} className={styles.services}>
+              <div
+                onClick={() => handleAddService(item._id)}
+                className={styles.certain_service}
+              >
+                <div className={styles.service_all}>
+                  <div className={styles.service_all_title}>
+                    <div className={styles.corcle_item}>
+                      <div className={styles.circle}>
+                        <span>
+                          {!selectedServicess.includes(item._id) ? (
+                            <AiOutlinePlus />
+                          ) : (
+                            <AiOutlineCheck />
+                          )}
+                        </span>
+                      </div>
+                      <div className={styles.serv_title}>{item.title}</div>
                     </div>
-                    <div className={styles.serv_title}>{item.title}</div>
+                    <div className={styles.service_all_price}>{item.price}</div>
                   </div>
-                  <div className={styles.service_all_price}>{item.price}</div>
                 </div>
               </div>
             </div>
+          );
+        })
+      ) : activeStep === 2 ? (
+        <div className={styles.text}>
+          <div className={styles.please}>
+            Если у вас есть дополнительные пожелания, заполните поле снизу. Мы
+            все их учтем
           </div>
-        );
-      })}
-      <button onClick={() => handleRend(checkInDate, checkOutDate)}>
-        арендовать
-      </button>
-      {rends && <ResultCheck rends={rends} />}
+          <hr />
+          <div className={styles.input}>
+            <textarea type="text" />
+          </div>
+          <button
+            className={!otpr ? styles.otpr : styles.otpr_green}
+            onClick={handleRend}
+          >
+            Отправить данные
+          </button>
+        </div>
+      ) : (
+        <div className={styles.ooo}>
+          <div className={styles.all_rooles}>
+            <div className={styles.hot_rool}>Правила поведения в хижине</div>
+            <div className={styles.rooles}>
+              <div className={styles.reg_rool}>
+                Регистрация заезда: с 14:00 до 23:00
+              </div>
+              <div className={styles.reg_rool}>Выезд: 11:00</div>
+              <div className={styles.reg_rool}>
+                Не подходит для детей и младенцев
+              </div>
+              <div className={styles.reg_rool}>Не курить</div>
+              <div className={styles.reg_rool}>Никаких домашних животных</div>
+            </div>
+          </div>
+          {rends && <ResultCheck onCheck={handleRend} rends={rends} />}
+          <div className={styles.import}>
+            <div className={styles.imp_info}>Важная информация</div>
+            <div className={styles.info_imp}>
+              Вам нужно подняться по крутому холму, чтобы добраться до домиков
+              на деревьях, это займет около 20-30 минут по тропе с лестницей и
+              неровной поверхностью.
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

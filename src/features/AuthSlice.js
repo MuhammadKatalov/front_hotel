@@ -56,8 +56,6 @@ export const doLogin = createAsyncThunk(
       });
 
       const data = await res.json();
-      console.log(data)
-
       if (!res.ok) {
         return thunkAPI.rejectWithValue({ error: data.error });
       } else {
