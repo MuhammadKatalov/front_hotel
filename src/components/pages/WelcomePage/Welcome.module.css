@@ -1,0 +1,10 @@
+.welcome__page {
+  width: 1400px;
+  margin: auto;
+}
+
+.mainImg {
+  width: 1400px;
+  height: 700px;
+  background-image: url("../../../imagesIcon/2473981701.png");
+}

@@ -20,7 +20,7 @@ export const fetchRoom = createAsyncThunk(
 
 export const postReview = createAsyncThunk(
   "reviews/post",
-  async ({ review }, thunkAPI) => {
+  async ({ review, grade }, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
       const res = await fetch("http://localhost:3400/reviews/reviews", {
@@ -29,7 +29,7 @@ export const postReview = createAsyncThunk(
           "Content-Type": "application/json",
           Authorization: `Bearer ${state.auth.token}`,
         },
-        body: JSON.stringify({ text: review }),
+        body: JSON.stringify({ text: review, grade }),
       });
 
       const data = await res.json();
