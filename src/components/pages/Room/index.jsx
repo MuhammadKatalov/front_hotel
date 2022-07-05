@@ -155,6 +155,7 @@ const Room = () => {
                 <div
                   className={styles.itemsId}
                 >{`${items.user?.firstName} ${items.user?.lastName}`}</div>
+                {console.log(items.user?.firstName)}
                 <Rating
                   className={styles.rating}
                   size="medium"

@@ -6,5 +6,124 @@
 .mainImg {
   width: 1400px;
   height: 700px;
-  background-image: url("../../../imagesIcon/2473981701.png");
+  background-image: url("../../../imagesIcon/Intro.png");
+}
+
+.findPeace__forest {
+  color: #fff;
+  font-size: 50px;
+  text-align: right;
+  padding-top: 100px;
+  padding-right: 60px;
+}
+
+.findPeace__paragraf {
+  width: 350px;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 1000px;
+}
+
+.first__info__block {
+  width: 1100px;
+  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.firstImg__inner {
+  width: 700px;
+  height: 430px;
+}
+
+.firstImg__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.firstBlock__info {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+}
+
+.firstBlock__paragraf {
+  width: 220px;
+  height: 40px;
+  margin: auto;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.outside__info {
+  line-height: 30px;
+  font-size: 15px;
+  margin-right: 50px;
+}
+
+.images__block {
+  display: flex;
+  justify-content: space-around;
+}
+
+.facilities {
+  width: 1400px;
+  height: 970px;
+  background-color: #5b6460;
+}
+
+.facilities__paragraf {
+  width: 100px;
+  margin: auto;
+  padding-top: 150px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.check__facilities {
+  width: 830px;
+  height: 560px;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.facilities__firstBlock {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.facilities__secondBlock {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.facilities__thirdBlock {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.lastImages {
+  width: 1400px;
+  height: 560px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lastImage1 {
+  background-image: url("../../../imagesIcon/lastImage2.png");
+}
+
+.lastImage2 {
+  background-image: url("../../../imagesIcon/lastImage1.png");
+}
+
+.lastImages div {
+  width: 50%;
 }
