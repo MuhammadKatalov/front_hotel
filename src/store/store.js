@@ -4,6 +4,7 @@ import RendSlice from "../features/RendSlice";
 import RoomSlice from "../features/RoomSlice";
 import ServicesSlice from "../features/ServicesSlice";
 import chatSlice from "../features/chatSlice";
+import profileSlice from '../features/profileSlice';
 
 const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
     auth: AuthSlice,
     room: RoomSlice,
     services: ServicesSlice,
-    chat: chatSlice
+    chat: chatSlice,
+    profile: profileSlice
   },
 });
 
