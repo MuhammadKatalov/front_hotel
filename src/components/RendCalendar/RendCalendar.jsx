@@ -97,20 +97,23 @@ const RendCalendar = () => {
           <div className={styles.vestborg}>Вестерборг, Дания</div>
         </div>
       </div>
-      <Stepper activeStep={activeStep}>
-        <Step>
-          <StepLabel>Шаг первый</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Шаг второй</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Почти закончили</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Конечная станция</StepLabel>
-        </Step>
-      </Stepper>
+      <div className={styles.stepper}>
+        <Stepper activeStep={activeStep}>
+          <Step>
+            <StepLabel>Шаг первый</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Шаг второй</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Почти закончили</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Конечная станция</StepLabel>
+          </Step>
+        </Stepper>
+      </div>
+
       <div className={styles.go_back}>
         <Button onClick={() => nextStep()} variant="outlined" color="primary">
           Вперед

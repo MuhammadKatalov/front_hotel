@@ -14,3 +14,9 @@
 .react-datepicker__day-names {
   width:1400px;
 }
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  color: #5b6460!important;
+}
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root {
+  height: 2em!important;
+}
