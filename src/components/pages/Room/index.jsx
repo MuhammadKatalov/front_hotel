@@ -18,7 +18,7 @@ const Room = () => {
   const user = useSelector((state) => state.auth.id);
 
   const [review, setReview] = useState("");
-  const [rating, setRating] = useState("");
+  const [grade, setGrade] = useState("");
 
   const dispatch = useDispatch();
 
@@ -35,8 +35,16 @@ const Room = () => {
     dispatch(deleteReviews(id));
   };
 
+  const reviewsFind = reviews.filter((review) => review.user._id === user);
+
+  const rating = Math.floor(
+    reviewsFind.reduce((sum, item) => {
+      return sum + item.grade;
+    }, 0) / reviewsFind.length
+  );
+
   const handleSubmit = () => {
-    dispatch(postReview({ review }));
+    dispatch(postReview({ review, grade }));
     dispatch(fetchReviews());
     setReview("");
   };
@@ -102,8 +110,29 @@ const Room = () => {
           </div>
         </div>
       </div>
-      <div className={styles.review__review}>Отзывы</div>
+      <div>
+        <div className={styles.review__review}>
+          Отзывы{" "}
+          {
+            <Rating
+              className={styles.rating2}
+              size="medium"
+              name="read-only"
+              value={rating}
+              readOnly
+            />
+          }
+        </div>
+      </div>
       <div className={styles.review__inner}>
+        <div className={styles.rating}>
+          <Rating
+            name="simple-controlled"
+            value={grade}
+            onChange={(e) => setGrade(e.target.value)}
+            size="medium"
+          />
+        </div>
         <div className={styles.review__wrapper}>
           <input
             className={styles.review__input}
@@ -111,7 +140,11 @@ const Room = () => {
             value={review}
             onChange={(e) => handleChangeReview(e)}
           />
-          <button className={styles.reviewBtn} disabled={!review.trim()} onClick={handleSubmit}>
+          <button
+            className={styles.reviewBtn}
+            disabled={!review.trim()}
+            onClick={handleSubmit}
+          >
             Добавить
           </button>
         </div>
@@ -121,12 +154,12 @@ const Room = () => {
               <div className={styles.user__review}>
                 <div
                   className={styles.itemsId}
-                >{`${items.user?.firstName} ${items.user?.lastName[0]}.`}</div>
+                >{`${items.user?.firstName} ${items.user?.lastName}`}</div>
                 <Rating
                   className={styles.rating}
-                  size="large"
+                  size="medium"
                   name="read-only"
-                  value={rating}
+                  value={items.grade}
                   readOnly
                 />
               </div>

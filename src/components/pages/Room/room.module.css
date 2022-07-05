@@ -112,7 +112,7 @@
   width: 700px;
   font-size: 24px;
   margin: auto;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid gray;
 }
@@ -126,6 +126,14 @@
 .review__wrapper {
   width: 700px;
   margin: auto;
+}
+
+.rating {
+  margin-left: 200px;
+}
+
+.rating2 {
+  margin-left: 20px;
 }
 
 .review__input {
