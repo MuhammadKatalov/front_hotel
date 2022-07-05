@@ -1,6 +1,6 @@
 .App {
-  margin-top: 20px;
-  margin-left: 60px;
+  width: 1400px;
+  margin-top: 150px;
   display: flex;
 }
 
@@ -13,6 +13,23 @@
   width: 700px;
   height: 650px;
   background-color: #e9ece0;
+}
+
+.textContent {
+  width: 500px;
+  height: 350px;
+  margin: auto;
+}
+
+.textParagraf {
+  margin-top: 150px;
+  font-size: 30px;
+}
+
+.textBlock {
+  margin-top: 25px;
+  line-height: 30px;
+  font-size: 14px;
 }
 
 [class*="copyrights-pane"] {
