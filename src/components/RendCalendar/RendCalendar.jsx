@@ -180,14 +180,12 @@ const RendCalendar = () => {
           <div className={styles.input}>
             <textarea type="text" />
           </div>
-          <Link to={'/payment'}>
-            <button
-              className={!otpr ? styles.otpr : styles.otpr_green}
-              onClick={handleRend}
-            >
-              Составить чек
-            </button>
-          </Link>
+          <button
+            className={!otpr ? styles.otpr : styles.otpr_green}
+            onClick={handleRend}
+          >
+            Составить чек
+          </button>
         </div>
       ) : (
         <div className={styles.ooo}>

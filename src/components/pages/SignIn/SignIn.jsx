@@ -129,7 +129,7 @@ const SigninPage = () => {
               <span>Войти</span>
             </button>
             <div className={styles.link__div}>
-              Нету аккаунта?{" "}
+              Нет аккаунта?{" "}
               <Link className={styles.signup__link} to="/signup">
                 Зарегистрироваться
               </Link>
