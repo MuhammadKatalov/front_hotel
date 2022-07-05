@@ -23,7 +23,6 @@ export const postRends = createAsyncThunk(
     'rends/postRends',
     async ({ registrationDate, releaseDate, services, room, callback }, thunkAPI) => {
         try {
-            console.log(services, 'dasdasdas');
             const state = thunkAPI.getState();
             const res = await fetch(`/rends/rend/${room}`, {
                 method: "POST",
