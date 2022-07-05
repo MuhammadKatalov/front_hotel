@@ -1,0 +1,80 @@
+.payment__wrapper {
+  width: 1400px;
+  margin: auto;
+}
+
+.main__content {
+  width: 700px;
+  margin-top: 50px;
+  margin: auto;
+}
+
+.pay__with {
+  font-size: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.first__inputs__line {
+  margin-top: 50px;
+}
+
+.card__input {
+  width: 700px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.second__inputs__line {
+  margin-top: 20px;
+}
+
+.card__number {
+  width: 700px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.third__inputs__line {
+  margin-top: 20px;
+}
+
+.expiration__input {
+  width: 350px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.CCV__input {
+  width: 350px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.fourth__inputs__line {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.zip__code {
+  width: 340px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.country__input {
+  width: 340px;
+  height: 40px;
+  padding-left: 15px;
+}
+
+.button__confirm {
+  width: 400px;
+  height: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: none;
+  color: aliceblue;
+  background-color: #5B6460;
+}
